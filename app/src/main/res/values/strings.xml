@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">Aqua Feed</string>
+    <string name="lbl_13_2_v">13,2 V</string>
+    <string name="lbl_tue">Tue</string>
+    <string name="lbl_32_0">32,0°</string>
+    <string name="lbl_partly_sunny">PARTLY SUNNY</string>
+    <string name="lbl_message">Message</string>
+    <string name="lbl_8_2w">8,2w</string>
+    <string name="lbl_weather">Weather</string>
+    <string name="lbl_24_30">24 ~ 30</string>
+    <string name="msg_feeding_progres">Feeding Progress</string>
+    <string name="lbl_27_5">27,5°</string>
+    <string name="lbl_07_21">07.21</string>
+    <string name="lbl_charging">Charging</string>
+    <string name="lbl_edit">Edit</string>
+    <string name="lbl_12_04_pm">12:04</string>
+    <string name="lbl_27_5_c">27,5°C</string>
+    <string name="lbl_16_11">16.11</string>
+    <string name="lbl_13_4v">13,4V</string>
+    <string name="lbl_wed">Wed</string>
+    <string name="lbl_thu_28_jun">Thu, 28 Jun</string>
+    <string name="msg_message_text">Message Text......</string>
+    <string name="msg_last_feed_16">Last Feed: 16 . 30 - 0,5 Kg\n
+Next Feed: 17 . 20 - 1,0 Kg</string>
+    <string name="lbl_80">80</string>
+    <string name="lbl_0_35_a">0,35 A</string>
+    <string name="lbl_schedule">Schedule</string>
+    <string name="lbl_battery">Battery</string>
+    <string name="msg_192_830_8_9_s">192.830.8.9\nSSID CODE</string>
+    <string name="lbl_water_temp">Water Temp</string>
+    <string name="lbl_mikaelsons">Mikaelsons</string>
+    <string name="lbl_70">70%</string>
+    <string name="lbl_22_0">22,0°</string>
+    <string name="lbl_mon">Mon</string>
+    <string name="lbl_27_32">27°/32°</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

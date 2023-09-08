@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:orientation="vertical"
+    android:paddingStart="32dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="32dp"
+    android:paddingBottom="16dp"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.CalculatorFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCalculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioFeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:checked="true"
+                android:text="F/D"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioSR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:text="SR"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioBlindFeeding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:text="B/F"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layoutFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:layout_gravity="center"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Feed/Day Calculator"
+                    android:textColor="@color/orange_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Initial Stocking:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtInitialFeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="ADG (gr/day):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtADGFeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="FCR:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtRatioFeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="MBW (gr):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtMBWFeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Survival Rate(%):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtFeedFeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Result:"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Feed per Day (Kg):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSRFeed"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Biomass (Kg):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtBiomassFeed"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Size (pcs/Kg):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSizeFeed"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalculateFeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Calculate"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_calculate" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCloseSR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/orange_500"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_stop" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:layout_gravity="center"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="SR Calculator"
+                    android:textColor="@color/orange_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Initial Stocking:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtInitialSR"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="ADG (gr/day):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtADGSR"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="FCR:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtRatioSR"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="MBW (gr):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtMBWSR"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Feed per Day (Kg):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtSR"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Result:"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Survival Rate(%):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtFeedSR"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0%"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Biomass (Kg):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtBiomassSR"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Size (pcs/Kg):"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtSizeSR"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalculateSR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Calculate"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_calculate" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCloseFD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/orange_500"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_stop" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutBF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:layout_gravity="center"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Blind Feeding Calculator"
+                    android:textColor="@color/orange_500" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Pond Name:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtPondName"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="text"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/edtInitialADG"
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Initial Stocking:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtInitialStocking"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Stocking Date:"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtStockingDate"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:focusableInTouchMode="false"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="text"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/txtGothambold13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="SR (%):"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtSRBF"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:id="@+id/dataBlind"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/black"
+            app:strokeColor="@color/gray_500">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_901"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/background_table"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="DOC"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Feed/Day (kg)"
+                        android:background="@drawable/background_table"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/background_table"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="Total (kg)"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/background_table"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="Biomass (kg)"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/background_table"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="MBW (gr)"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutNoData"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/background_table_dark"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:text="No Data" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/lineNoData"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:background="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBlindFeeding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_blind_calculator" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:id="@+id/btnBlind"
+            android:layout_marginBottom="64dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalculateBF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/blue"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingTop="2sp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="2sp"
+                android:singleLine="true"
+                android:text="Calculate"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="4dp"
+                app:icon="@drawable/ic_calculate" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCloseBF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/orange_500"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingTop="2sp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="2sp"
+                android:singleLine="true"
+                android:text="Close"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="4dp"
+                app:icon="@drawable/ic_stop" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

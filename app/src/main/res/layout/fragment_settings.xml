@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioWifi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:text="Wifi"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:text="Device"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioSensor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:minHeight="0dp"
+                android:singleLine="true"
+                android:text="Sensor"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layoutWifi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Select Wifi Mode:" />
+
+                <RadioGroup
+                    android:id="@+id/radioWifiMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioStation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:minHeight="0dp"
+                        android:singleLine="true"
+                        android:checked="true"
+                        style="@style/txtGothambook9"
+                        android:text="Station (STA)"
+                        android:textColor="@color/white"
+                        app:buttonTint="@color/white" />
+
+                    <RadioButton
+                        android:id="@+id/radioAccessPoint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:minHeight="0dp"
+                        android:singleLine="true"
+                        android:text="Access Point (AP)"
+                        style="@style/txtGothambook9"
+                        android:textColor="@color/white"
+                        app:buttonTint="@color/white" />
+
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/wifiName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Host Name:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/txtIP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="123 8712 820 01"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioAP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:ellipsize="end"
+                        android:minHeight="0dp"
+                        android:singleLine="true"
+                        app:buttonTint="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/txtGothambold13"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:singleLine="true"
+                            android:text="Access Point Setting (AP):" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                style="@style/txtGothambook11"
+                                android:text="SSID:"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtId"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:text="AquaFeedX"
+                                android:gravity="center"
+                                android:inputType="text"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                style="@style/txtGothambook11"
+                                android:text="Password:"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtPasswordAP"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:text="1234567890"
+                                android:inputType="textPassword"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                style="@style/txtGothambook11"
+                                android:text="IP Address:"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtIPAddress"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:text="192.168.5.1"
+                                android:inputType="text"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioSTA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:minHeight="0dp"
+                        android:singleLine="true"
+                        app:buttonTint="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/txtGothambold13"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:singleLine="true"
+                            android:text="Station Setting (STA):" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="SSID:"
+                                style="@style/txtGothambook11"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtIdSTA"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:inputType="text"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="Password:"
+                                style="@style/txtGothambook11"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtPasswordSTA"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:inputType="textPassword"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                style="@style/txtGothambook11"
+                                android:text="IP Address:"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtIPAddressSTA"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:inputType="text"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                style="@style/txtGothambook11"
+                                android:text="Signal (dbM):"
+                                android:textColor="@color/white" />
+
+                            <EditText
+                                android:id="@+id/edtSignal"
+                                style="@style/etSolidOutline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.6"
+                                android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                                android:ellipsize="end"
+                                android:enabled="true"
+                                android:gravity="center"
+                                android:inputType="text"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="@dimen/_5pxh"
+                                android:paddingTop="4dp"
+                                android:paddingBottom="4dp"
+                                android:singleLine="true"
+                                android:textColorHint="@color/gray_500" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingTop="2sp"
+                        android:paddingEnd="16dp"
+                        android:paddingBottom="2sp"
+                        android:singleLine="true"
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_save" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/red_700"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="16dp"
+                        android:paddingTop="2sp"
+                        android:paddingBottom="2sp"
+                        android:singleLine="true"
+                        android:text="Cancel"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_stop" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Device Setting:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Feeding Rate (gr/min):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtFeedingRate"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Amount/Throw (kg):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtAmount"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Thrower Speed (%):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtThowerSpeed"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Dosser Speed (%):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtDosser"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Dosser Delay Start (sec):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtDosserDelay"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Dosser Delay Stop (sec):"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/edtDosserStop"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Feed Sensor Sensitivity:"
+                        style="@style/txtGothambook13"
+                        android:textColor="@color/white" />
+
+                    <EditText
+                        android:id="@+id/feedSensor"
+                        style="@style/etSolidOutline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                        android:ellipsize="end"
+                        android:enabled="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:letterSpacing="0.05"
+                        android:lineSpacingExtra="@dimen/_5pxh"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_500" />
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/ic_download"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Reload"
+                    android:textColor="@color/white"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_refresh" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/green_A700"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="2sp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_check" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSensor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Sensor Activation:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Battery:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switchBattery"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Water Temperature:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switchWater"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Solar Panel:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switchSolarPanel"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Water PH:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:id="@+id/switchWaterPH"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Turbidity:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:id="@+id/switchTurbidity"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Salinity:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:id="@+id/switchSalinity"
+                        app:kswBackColor="@color/selector_color_background"
+                        app:kswThumbColor="@color/white"
+                        app:kswThumbHeight="8dp"
+                        app:kswThumbRangeRatio="2.5"
+                        app:kswThumbWidth="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveSensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/blue"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_save" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelSensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/red_700"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="2sp"
+                    android:paddingBottom="2sp"
+                    android:singleLine="true"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_stop" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

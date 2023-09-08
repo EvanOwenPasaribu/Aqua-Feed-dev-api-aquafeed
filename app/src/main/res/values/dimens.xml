@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <dimen name="_1pxh">1.0dp</dimen>
+    <dimen name="_3pxh">3.0dp</dimen>
+    <dimen name="_4pxh">4.0dp</dimen>
+    <dimen name="_5pxh">5.0dp</dimen>
+    <dimen name="_6pxh">6.0dp</dimen>
+    <dimen name="_7pxh">7.0dp</dimen>
+    <dimen name="_9pxh">9.0dp</dimen>
+    <dimen name="_10pxh">10.0dp</dimen>
+    <dimen name="_11pxh">11.0dp</dimen>
+    <dimen name="_12pxh">12.0dp</dimen>
+    <dimen name="_13pxh">13.0dp</dimen>
+    <dimen name="_14pxh">14.0dp</dimen>
+    <dimen name="_15pxh">15.0dp</dimen>
+    <dimen name="_20pxh">20.0dp</dimen>
+    <dimen name="_22pxh">22.0dp</dimen>
+    <dimen name="_24pxh">24.0dp</dimen>
+    <dimen name="_25pxh">25.0dp</dimen>
+    <dimen name="_30pxh">30.0dp</dimen>
+    <dimen name="_36pxh">36.0dp</dimen>
+    <dimen name="_1pxv">1.0dp</dimen>
+    <dimen name="_2pxv">2.0dp</dimen>
+    <dimen name="_5pxv">5.0dp</dimen>
+    <dimen name="_7pxv">7.0dp</dimen>
+    <dimen name="_13pxv">13.0dp</dimen>
+</resources>

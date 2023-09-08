@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.ScheduleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <TextView
+            style="@style/txtGothambold17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Select Schedule:"
+            android:textColor="@color/white" />
+
+        <RadioGroup
+            android:id="@+id/radioSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioToday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Today"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+            <RadioButton
+                android:id="@+id/radioTomorrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Next Day"
+                android:textColor="@color/white"
+                app:buttonTint="@color/white" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_bg_black_900_border_black_500_radius_20"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <TextView
+                style="@style/txtGothambold17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="From Template:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/edtTemplateName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    style="@style/etSolidOutlineTemplate"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_weight="0.7"
+                    android:focusableInTouchMode="false"
+                    android:textColorHint="@color/gray_500"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:hint="Template Name"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:drawableTint="@color/white"
+                    android:paddingEnd="8dp"
+                    android:maxLines="1" />
+
+                <EditText
+                    android:id="@+id/edtAutoGenerateKG"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:hint="Kg."
+                    android:inputType="numberDecimal"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCreateTemplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Create"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_edit" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveTemplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_save" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeleteTemplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Delete"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_delete" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_black_900_border_black_500_radius_20"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                style="@style/txtGothambold17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="Manual:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtId"
+                    style="@style/etSolidOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_bg_real_black_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:hint="ID"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+                <EditText
+                    android:id="@+id/edtTime"
+                    style="@style/etSolidOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:hint="Time"
+                    android:inputType="text"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+
+                    android:textColorHint="@color/gray_500" />
+
+                <EditText
+                    android:id="@+id/edtDuration"
+                    style="@style/etSolidOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:hint="min."
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+                <EditText
+                    android:id="@+id/edtAmount"
+                    style="@style/etSolidOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:hint="Kg."
+                    android:inputType="numberDecimal"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Add"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_add_circle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Update"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_refresh" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Clear"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_cancel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:drawableTint="@color/white_A702"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/gotham"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Delete"
+                    android:textColor="@color/white_A702"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp"
+                    app:icon="@drawable/ic_delete" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_table"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Id"
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_table"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Time"
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_table"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Dur."
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_table"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="Kg."
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_table"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text="On/Off"
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutNoData"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_table_dark"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:text="No Data" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/lineNoData"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:background="@color/white" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_schedule" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/background_table_dark_line"
+                    android:ellipsize="end"
+                    android:padding="4dp"
+                    android:singleLine="true"
+                    android:text="Total:"
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtTotalKG"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/background_table_dark_line"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold"
+                    tools:text="10" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/background_table_dark_line"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/white_A702"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/blue"
+                android:minHeight="0dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:minWidth="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:maxLines="1"
+                android:text="Refresh"
+                android:textColor="@color/white"
+                app:cornerRadius="4dp"
+                app:icon="@drawable/ic_refresh" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/red_700"
+                android:minHeight="0dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:minWidth="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:maxLines="1"
+                android:text="Delete All"
+                android:textColor="@color/white"
+                app:cornerRadius="4dp"
+                app:icon="@drawable/ic_delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

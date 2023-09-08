@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.RunTestFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <TextView
+            style="@style/txtGothambold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/_1pxh"
+            android:singleLine="true"
+            android:text="Motor Test" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                style="@style/txtGothambold15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="Select Motor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btnThrower"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:src="@drawable/ic_report"
+                        app:tint="@color/white_A702" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:gravity="center"
+                        android:text="Thrower"
+                        android:textColor="@color/white_A702"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDosser"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:src="@drawable/ic_report"
+                        app:tint="@color/white_A702" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:gravity="center"
+                        android:text="Dosser"
+                        android:textColor="@color/white_A702"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Speed Setting:" />
+
+                <EditText
+                    android:id="@+id/edtSpeedMotor"
+                    style="@style/etSolidOutline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rectangle_bg_real_gray_900_border_none_100_radius_5"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:hint="80"
+                    android:textStyle="bold"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingStart="32dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="32dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:trackHeight="20dp"
+                    android:stepSize="5"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:thumbRadius="12dp"
+                    app:thumbColor="@color/blue"
+                    app:tickColorActive="@color/blue"
+                    app:tickColorInactive="@color/black_grey"
+                    app:trackColorActive="@color/blue"
+                    app:trackColorInactive="@color/black_grey" />
+
+                <TextView
+                    android:id="@+id/txtProgressMotor"
+                    style="@style/txtGothambold15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="0%" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartMotorTest"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp"
+                    app:icon="@drawable/ic_play"
+                    android:layout_gravity="start"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Start"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStopMotorTest"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_stop"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Stop"
+                    android:textSize="12sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveMotorTest"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:icon="@drawable/ic_save"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textSize="12sp"
+                    android:text="Save"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/txtGothambold20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/_1pxh"
+            android:singleLine="true"
+            android:text="Feeding Test" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Feeding Rate:" />
+
+                <EditText
+                    android:id="@+id/edtFeedingRate"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_real_gray_900_border_none_100_radius_5"
+                    android:ellipsize="end"
+                    android:hint="1000"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColorHint="@color/gray_500" />
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="gr/min." />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Test Amount:" />
+
+                <EditText
+                    android:id="@+id/edtTestAmount"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:hint="80"
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColorHint="@color/gray_500" />
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Kg." />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressMotorTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:trackThickness="20dp"
+                    app:trackCornerRadius="4dp"
+                    app:indicatorColor="@color/blue"
+                    app:trackColor="@color/black_grey"
+                    android:progress="0"/>
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:id="@+id/txtProgress"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartFeedingTest"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:icon="@drawable/ic_play"
+                    android:textSize="12sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Start"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStopFeedingTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:icon="@drawable/ic_stop"
+                    android:textSize="12sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Stop"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

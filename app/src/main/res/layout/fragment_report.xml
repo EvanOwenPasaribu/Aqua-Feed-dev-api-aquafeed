@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_black"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.ReportFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <TextView
+            style="@style/txtGothambold17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/_1pxh"
+            android:singleLine="true"
+            android:text="Select Report:" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <RadioGroup
+                android:id="@+id/radioDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioToday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="0dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    app:buttonTint="@color/white"
+                    android:checked="true"
+                    android:text="Today"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:minHeight="0dp"
+                    app:buttonTint="@color/white"
+                    android:text="Range"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioSystem"
+                    android:minHeight="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    app:buttonTint="@color/white"
+                    android:text="System"
+                    android:textColor="@color/white" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layoutSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioDate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtRange"
+                    style="@style/etSolidOutline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_gray_900_border_gray_500"
+                    android:ellipsize="end"
+                    android:hint="Find Date Range"
+                    android:inputType="text"
+                    android:letterSpacing="0.05"
+                    android:focusableInTouchMode="false"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:paddingStart="@dimen/_6pxh"
+                    android:paddingTop="@dimen/_7pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_7pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_500" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_search"
+                    android:textSize="12sp"
+                    android:minHeight="0dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:text="Search"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_gray_900_border_gray_500_radius_20"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/txtGothambold17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Report Here:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray_901"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Date"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:background="@drawable/background_table_gray"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:textColor="@color/orange_500"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:gravity="center"
+                        android:background="@drawable/background_table_gray"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:text="File Name"
+                        android:textColor="@color/orange_500"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:background="@drawable/background_table_gray"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:gravity="center"
+                        android:text="Size"
+                        android:textColor="@color/orange_500"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_log" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white_A702" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRefresh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/green_A700"
+                        android:minHeight="0dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:minWidth="0dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:maxLines="1"
+                        android:text="Refresh"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_refresh" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:minHeight="0dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:minWidth="0dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:maxLines="1"
+                        android:text="Delete"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_delete" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDeleteAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/red_700"
+                        android:textStyle="bold"
+                        android:minHeight="0dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:minWidth="0dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:maxLines="1"
+                        android:text="Delete All"
+                        android:textColor="@color/white"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_delete" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

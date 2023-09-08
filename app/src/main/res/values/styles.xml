@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="txtSolidRoundedOutline">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5</item>
+    </style>
+    <style name="txtGothambold25">
+        <item name="android:textSize">@dimen/_25pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambook10">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambook9">
+        <item name="android:textSize">@dimen/_9pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambook11">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="groupStylegray_901cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_901_radius_15</item>
+    </style>
+    <style name="groupStylegray_901cornerRadiussmall">
+        <item name="android:background">@drawable/rectangle_bg_gray_901_radius_small</item>
+    </style>
+    <style name="txtGothambook12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="groupStylegray_900cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_gray_900_border_gray_500_radius_20</item>
+    </style>
+    <style name="groupStyleblack_900cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_black_900_border_black_500_radius_20</item>
+    </style>
+    <style name="groupStyleblack2_900cornerRadius">
+        <item name="android:background">@drawable/rectangle_bg_black_900_border_black_500_radius_20</item>
+    </style>
+    <style name="txtGothambook13">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="etSolidOutline">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_900_border_gray_500</item>
+    </style>
+    <style name="etSolidOutlineTemplate" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_900_border_gray_500</item>
+    </style>
+    <style name="groupStylecornerRadius">
+        <item name="android:background">@drawable/rectangle_radius_9</item>
+    </style>
+    <style name="txtGothambook15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambook20">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambold10_1">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold11_1">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/red_700</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold10_2">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/white_A700_b2</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold13">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold11">
+        <item name="android:textSize">@dimen/_11pxh</item>
+        <item name="android:textColor">@color/green_A700</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold10">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold30">
+        <item name="android:textSize">@dimen/_30pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="groupStylegray_900">
+        <item name="android:background">@drawable/rectangle_bg_gray_900</item>
+    </style>
+    <style name="btnSolidRounded">
+        <item name="android:textSize">@dimen/_10pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:background">@drawable/rectangle_bg_gray_901_radius_15</item>
+    </style>
+    <style name="txtGothambold15">
+        <item name="android:textSize">@dimen/_15pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold16">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold17">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/green_A700</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold36">
+        <item name="android:textSize">@dimen/_36pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtDidactGothicregular13">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtDidactGothicregular14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtDidactGothicBold14">
+        <item name="android:textSize">@dimen/_14pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold9_1">
+        <item name="android:textSize">@dimen/_9pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambook13_1">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtDidactGothicregular13_1">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/didact_gothic</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambook30">
+        <item name="android:textSize">@dimen/_30pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtGothambold24">
+        <item name="android:textSize">@dimen/_24pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold22">
+        <item name="android:textSize">@dimen/_22pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold7">
+        <item name="android:textSize">@dimen/_7pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothambold20">
+        <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/gray_50</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="groupStylegray_1">
+        <item name="android:background">@drawable/rectangle_bg_gray_901_radius_20</item>
+    </style>
+    <style name="txtGothambold9">
+        <item name="android:textSize">@dimen/_9pxh</item>
+        <item name="android:textColor">@color/white_A702</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+    <style name="txtGothammedium36">
+        <item name="android:textSize">@dimen/_36pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="txtGothammedium30">
+        <item name="android:textSize">@dimen/_30pxh</item>
+        <item name="android:textColor">@color/orange_500</item>
+        <item name="android:fontFamily">@font/gotham</item>
+        <item name="android:textFontWeight" tools:targetApi="p">500</item>
+    </style>
+    <style name="groupStylegray_901">
+        <item name="android:background">@drawable/rectangle_bg_gray_900_border_gray_500</item>
+    </style>
+    <style name="groupStylegray_902">
+        <item name="android:background">@drawable/rectangle_bg_gray_901</item>
+    </style>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorAccent">@color/orange</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerPositiveButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerNegativeButtonStyle</item>
+    </style>
+
+    <style name="DatePickerPositiveButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/orange_500</item>
+    </style>
+
+    <style name="DatePickerNegativeButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/orange_500</item>
+    </style>
+</resources>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_black"
+    android:fillViewport="true"
+    tools:context=".ui.fragment.CalibrationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_header" />
+
+        <TextView
+            style="@style/txtGothambold15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="@dimen/_1pxh"
+            android:singleLine="true"
+            android:text="Instruction" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:text="Message Text..."
+                android:fontFamily="@font/didact_gothic"
+                android:textColor="@color/white_A702" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Enter Duration:" />
+
+                <EditText
+                    android:id="@+id/edtDuration"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:hint="100"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColorHint="@color/gray_500" />
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="sec." />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:trackThickness="20dp"
+                    app:trackCornerRadius="4dp"
+                    app:indicatorColor="@color/blue"
+                    app:trackColor="@color/black_grey"
+                    android:progress="0"/>
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:id="@+id/txtProgress"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_play"
+                    android:textSize="12sp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2sp"
+                    android:textStyle="bold"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:text="Start"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancelDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_stop"
+                    android:textSize="12sp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:visibility="gone"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:text="Cancel"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/red_700"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_bg_black_900_border_bluegray_100_radius_5"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Enter Result:" />
+
+                <EditText
+                    android:id="@+id/edtGramsResult"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_gray_900_border_bluegray_100_radius_5"
+                    android:ellipsize="end"
+                    android:hint="100"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColorHint="@color/gray_500" />
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="grams." />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="Feeding Rate:" />
+
+                <EditText
+                    android:id="@+id/edtFeedingRate"
+                    style="@style/etSolidOutline"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_bg_real_gray_900_border_none_100_radius_5"
+                    android:ellipsize="end"
+                    android:hint="1000"
+                    android:textStyle="bold"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:letterSpacing="0.05"
+                    android:lineSpacingExtra="@dimen/_5pxh"
+                    android:singleLine="true"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColorHint="@color/gray_500" />
+
+                <TextView
+                    style="@style/txtGothambold15"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginStart="16dp"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="gr/min." />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalculateFeeding"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_calculate"
+                    android:textSize="12sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2sp"
+                    android:text="Calculate"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/green_A700"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveFeeding"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:icon="@drawable/ic_save"
+                    android:textSize="12sp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="2sp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="2sp"
+                    android:drawableTint="@color/white_A702"
+                    android:fontFamily="@font/gotham"
+                    android:text="Save"
+                    android:textColor="@color/white_A702"
+                    app:backgroundTint="@color/blue"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

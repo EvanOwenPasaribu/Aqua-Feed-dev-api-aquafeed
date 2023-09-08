@@ -1,0 +1,9 @@
+<resources>
+    <style name="Base.Theme.AquaFeed" parent="Theme.Material3.DayNight.NoActionBar">
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorSecondary">@color/grey</item>
+         <item name="colorAccent">@color/orange</item>
+    </style>
+
+    <style name="Theme.AquaFeed" parent="Base.Theme.AquaFeed" />
+</resources>
